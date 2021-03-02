@@ -7,12 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LogInScreen: UIViewController {
 
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    let login = "admin"
+  
+    let password = "12345"
 
     @IBAction func buttonTapped(_ sender: Any) {
         if loginField.text == "admin", passwordField.text == "12345" {
@@ -52,7 +54,33 @@ class ViewController: UIViewController {
     @objc func hideKeyboard () {
         self.scrollView?.endEditing(true)
     }
-    
+    @IBAction func logOutAction (unwindSegue: UIStoryboardSegue) {
+        loginField.text = ""
+        passwordField.text = ""
+    }
+    private func checkLogAndPass() -> Bool {
+        return loginField.text == login && passwordField.text == password
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "logInScreen" {
+            
+                if checkLogAndPass() {
+                    return true
+                } else {
+                    let alert = UIAlertController (title: "Alert", message: "wrong password", preferredStyle: .alert)
+                    let action = UIAlertAction (title: "OK", style: .default) { (action) in
+                        self.loginField.text = ""
+                        self.passwordField.text = ""
+                    }
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+            
+        }
+        return true
+    }
+
 }
 
 
