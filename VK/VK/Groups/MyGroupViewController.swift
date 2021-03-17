@@ -32,8 +32,8 @@ extension MyGroupViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myGroupTableView.dequeueReusableCell(withIdentifier: "reusableCell") as! UserTableViewCell
-        cell.avatarImg.image = mygroup[indexPath.row].groupAvatar
-        cell.nameLabel.text = mygroup[indexPath.row].groupName
+        cell.avatarImage.image = mygroup[indexPath.row].groupAvatar
+        cell.nameLabl.text = mygroup[indexPath.row].groupName
         return cell
     }
     

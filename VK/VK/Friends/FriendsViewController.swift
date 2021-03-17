@@ -36,8 +36,8 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let user = users[indexPath.row]
         let fio = user.fio
         let avatar = user.friendAvatar
-        cell.nameLabel.text = fio
-        cell.avatarImg.image = avatar
+        cell.nameLabl.text = fio
+        cell.avatarImage.image = avatar
         return cell
     }
     

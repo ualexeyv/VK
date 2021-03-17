@@ -20,6 +20,9 @@
 		4BC536C625F938A10053B05B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536C525F938A10053B05B /* PhotoCollectionViewCell.swift */; };
 		4BC536CA25F944C90053B05B /* MyGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536C925F944C90053B05B /* MyGroupViewController.swift */; };
 		4BC536D225F94C390053B05B /* GlobalGorupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536D125F94C390053B05B /* GlobalGorupViewController.swift */; };
+		4BC536D726007D3E0053B05B /* RoundedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536D626007D3E0053B05B /* RoundedPhoto.swift */; };
+		4BC536DA260080CC0053B05B /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536D9260080CC0053B05B /* ShadowView.swift */; };
+		4BC536DD26008C9C0053B05B /* LikesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536DC26008C9C0053B05B /* LikesButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		4BC536C525F938A10053B05B /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		4BC536C925F944C90053B05B /* MyGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupViewController.swift; sourceTree = "<group>"; };
 		4BC536D125F94C390053B05B /* GlobalGorupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalGorupViewController.swift; sourceTree = "<group>"; };
+		4BC536D626007D3E0053B05B /* RoundedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedPhoto.swift; sourceTree = "<group>"; };
+		4BC536D9260080CC0053B05B /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		4BC536DC26008C9C0053B05B /* LikesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,9 @@
 				4BC5369325EA35DC0053B05B /* Assets.xcassets */,
 				4BC5369525EA35DC0053B05B /* LaunchScreen.storyboard */,
 				4BC5369825EA35DC0053B05B /* Info.plist */,
+				4BC536D626007D3E0053B05B /* RoundedPhoto.swift */,
+				4BC536D9260080CC0053B05B /* ShadowView.swift */,
+				4BC536DC26008C9C0053B05B /* LikesButton.swift */,
 			);
 			path = VK;
 			sourceTree = "<group>";
@@ -190,7 +199,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC536DA260080CC0053B05B /* ShadowView.swift in Sources */,
+				4BC536D726007D3E0053B05B /* RoundedPhoto.swift in Sources */,
 				4BC536C625F938A10053B05B /* PhotoCollectionViewCell.swift in Sources */,
+				4BC536DD26008C9C0053B05B /* LikesButton.swift in Sources */,
 				4BC536D225F94C390053B05B /* GlobalGorupViewController.swift in Sources */,
 				4BC536A625EE9CD10053B05B /* FriendsViewController.swift in Sources */,
 				4BC5368F25EA35D70053B05B /* LogInScreen.swift in Sources */,
