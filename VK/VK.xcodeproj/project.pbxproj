@@ -14,8 +14,12 @@
 		4BC5369425EA35DC0053B05B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5369325EA35DC0053B05B /* Assets.xcassets */; };
 		4BC5369725EA35DC0053B05B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC5369525EA35DC0053B05B /* LaunchScreen.storyboard */; };
 		4BC536A625EE9CD10053B05B /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536A525EE9CD10053B05B /* FriendsViewController.swift */; };
-		4BC536A925EEB2930053B05B /* GroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536A825EEB2930053B05B /* GroupTableView.swift */; };
-		4BC536AC25EEB2C70053B05B /* GlobalGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536AB25EEB2C70053B05B /* GlobalGroupView.swift */; };
+		4BC536B725F539250053B05B /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536B625F539250053B05B /* database.swift */; };
+		4BC536BB25F54D790053B05B /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536BA25F54D790053B05B /* UserTableViewCell.swift */; };
+		4BC536C325F9377D0053B05B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536C225F9377D0053B05B /* PhotoViewController.swift */; };
+		4BC536C625F938A10053B05B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536C525F938A10053B05B /* PhotoCollectionViewCell.swift */; };
+		4BC536CA25F944C90053B05B /* MyGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536C925F944C90053B05B /* MyGroupViewController.swift */; };
+		4BC536D225F94C390053B05B /* GlobalGorupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC536D125F94C390053B05B /* GlobalGorupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +32,12 @@
 		4BC5369625EA35DC0053B05B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC5369825EA35DC0053B05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BC536A525EE9CD10053B05B /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
-		4BC536A825EEB2930053B05B /* GroupTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableView.swift; sourceTree = "<group>"; };
-		4BC536AB25EEB2C70053B05B /* GlobalGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalGroupView.swift; sourceTree = "<group>"; };
+		4BC536B625F539250053B05B /* database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
+		4BC536BA25F54D790053B05B /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		4BC536C225F9377D0053B05B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		4BC536C525F938A10053B05B /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		4BC536C925F944C90053B05B /* MyGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupViewController.swift; sourceTree = "<group>"; };
+		4BC536D125F94C390053B05B /* GlobalGorupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalGorupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,8 @@
 		4BC5368925EA35D70053B05B /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				4BC536C125F937570053B05B /* New Group */,
+				4BC536B525F538F20053B05B /* Model */,
 				4BC536A025EE9C3C0053B05B /* Groups */,
 				4BC5369F25EE9C310053B05B /* Friends */,
 				4BC5368A25EA35D70053B05B /* AppDelegate.swift */,
@@ -79,6 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				4BC536A525EE9CD10053B05B /* FriendsViewController.swift */,
+				4BC536BA25F54D790053B05B /* UserTableViewCell.swift */,
+				4BC536C225F9377D0053B05B /* PhotoViewController.swift */,
+				4BC536C525F938A10053B05B /* PhotoCollectionViewCell.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -86,10 +99,25 @@
 		4BC536A025EE9C3C0053B05B /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				4BC536A825EEB2930053B05B /* GroupTableView.swift */,
-				4BC536AB25EEB2C70053B05B /* GlobalGroupView.swift */,
+				4BC536C925F944C90053B05B /* MyGroupViewController.swift */,
+				4BC536D125F94C390053B05B /* GlobalGorupViewController.swift */,
 			);
 			path = Groups;
+			sourceTree = "<group>";
+		};
+		4BC536B525F538F20053B05B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4BC536B625F539250053B05B /* database.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4BC536C125F937570053B05B /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,12 +190,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC536A925EEB2930053B05B /* GroupTableView.swift in Sources */,
+				4BC536C625F938A10053B05B /* PhotoCollectionViewCell.swift in Sources */,
+				4BC536D225F94C390053B05B /* GlobalGorupViewController.swift in Sources */,
 				4BC536A625EE9CD10053B05B /* FriendsViewController.swift in Sources */,
 				4BC5368F25EA35D70053B05B /* LogInScreen.swift in Sources */,
 				4BC5368B25EA35D70053B05B /* AppDelegate.swift in Sources */,
+				4BC536BB25F54D790053B05B /* UserTableViewCell.swift in Sources */,
+				4BC536C325F9377D0053B05B /* PhotoViewController.swift in Sources */,
 				4BC5368D25EA35D70053B05B /* SceneDelegate.swift in Sources */,
-				4BC536AC25EEB2C70053B05B /* GlobalGroupView.swift in Sources */,
+				4BC536CA25F944C90053B05B /* MyGroupViewController.swift in Sources */,
+				4BC536B725F539250053B05B /* database.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
