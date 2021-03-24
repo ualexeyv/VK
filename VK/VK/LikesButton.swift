@@ -38,8 +38,9 @@ import UIKit
     }
     
     private func commonInit() {
+        let likeImage = UIImage (named: "like-1")
         likesLabel = UILabel()
-        likeImageView = UIImageView(image: #imageLiteral(resourceName: "like-1"))
+        likeImageView = UIImageView(image: likeImage)
         likeImageView.contentMode = .scaleAspectFit
         likesLabel.textAlignment = .left
         stackView = UIStackView (arrangedSubviews: [likesLabel,likeImageView])

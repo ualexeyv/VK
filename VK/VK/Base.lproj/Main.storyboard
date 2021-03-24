@@ -143,6 +143,41 @@
             </objects>
             <point key="canvasLocation" x="1928.985507246377" y="874.55357142857144"/>
         </scene>
+        <!--Новости-->
+        <scene sceneID="1UL-mP-vLA">
+            <objects>
+                <viewController id="YHB-RV-xYy" customClass="NewsViewController" customModule="VK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R87-X6-Gl8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7oX-yC-QLX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="YHB-RV-xYy" id="XPD-N3-ifl"/>
+                                    <outlet property="delegate" destination="YHB-RV-xYy" id="q9C-GE-pXz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gnG-wO-o5s"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gnG-wO-o5s" firstAttribute="trailing" secondItem="7oX-yC-QLX" secondAttribute="trailing" id="IXt-9b-bKJ"/>
+                            <constraint firstItem="gnG-wO-o5s" firstAttribute="bottom" secondItem="7oX-yC-QLX" secondAttribute="bottom" id="Nj8-6n-jJn"/>
+                            <constraint firstItem="7oX-yC-QLX" firstAttribute="leading" secondItem="gnG-wO-o5s" secondAttribute="leading" id="RJ3-9S-gPh"/>
+                            <constraint firstItem="7oX-yC-QLX" firstAttribute="top" secondItem="gnG-wO-o5s" secondAttribute="top" id="hBA-pY-59b"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Новости" id="A4G-IX-y8v"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="7oX-yC-QLX" id="Xpl-VC-Qu4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C3Y-Yb-dCQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="1130"/>
+        </scene>
         <!--друзья-->
         <scene sceneID="HMh-7I-vEw">
             <objects>
@@ -239,6 +274,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="background"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="kZR-fm-Pjg" id="6kh-Rf-E2K"/>
                                     <outlet property="delegate" destination="kZR-fm-Pjg" id="asI-p6-nau"/>
@@ -347,6 +385,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Bf6-vd-A9L"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rtd-hw-sf7">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -354,6 +393,7 @@
                         <segue destination="quV-f1-UJY" kind="relationship" relationship="viewControllers" id="rAv-cq-Not"/>
                         <segue destination="anG-Do-m6q" kind="relationship" relationship="viewControllers" id="ugP-us-L6A"/>
                         <segue destination="Ami-vW-fad" kind="relationship" relationship="viewControllers" id="5Up-fx-w3U"/>
+                        <segue destination="YHB-RV-xYy" kind="relationship" relationship="viewControllers" id="cag-UQ-opB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOV-UV-glf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -594,6 +634,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="background" width="923" height="436"/>
         <image name="icons8-batman-40" width="40" height="40"/>
         <image name="like-1" width="256" height="256"/>
         <systemColor name="labelColor">
