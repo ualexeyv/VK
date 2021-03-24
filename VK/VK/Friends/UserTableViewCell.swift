@@ -10,12 +10,12 @@ import UIKit
 class UserTableViewCell: UITableViewCell {
 
    
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var avatarImg: UIImageView!
+    @IBOutlet weak var nameLabl: UILabel!
+    @IBOutlet weak var avatarImage: UIImageView!
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        nameLabel.text = ""
+        nameLabl.text = ""
     }
     
     

@@ -32,8 +32,8 @@ extension GlobalGroupViewController: UITableViewDelegate, UITableViewDataSource 
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = globalGroupTableView.dequeueReusableCell(withIdentifier: "reusableCell") as! UserTableViewCell
-        cell.avatarImg.image = globalGroup[indexPath.row].groupAvatar
-        cell.nameLabel.text = globalGroup[indexPath.row].groupName
+        cell.avatarImage.image = globalGroup[indexPath.row].groupAvatar
+        cell.nameLabl.text = globalGroup[indexPath.row].groupName
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
