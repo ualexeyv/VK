@@ -96,6 +96,7 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let avatar = user.friendAvatar
         cell.nameLabl.text = fio
         cell.avatarImage.image = avatar
+        
         return cell
     }
     

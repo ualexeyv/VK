@@ -36,10 +36,12 @@ class LogInScreen: UIViewController {
         scrollView?.contentInset = contentInsets
     }
     override func viewWillAppear(_ animated: Bool) {
+        downloadIndicatorAnimate()
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let hideKeabordGesture = UITapGestureRecognizer (target: self, action: #selector(hideKeyboard))
@@ -61,10 +63,33 @@ class LogInScreen: UIViewController {
     private func checkLogAndPass() -> Bool {
         return loginField.text == login && passwordField.text == password
     }
+    private func pointPrepare (cView: UIView, delay: Double) {
+        cView.backgroundColor = .black
+        cView.layer.cornerRadius = 2
+        cView.layer.masksToBounds = true
+        cView.alpha = 1
+        view.addSubview(cView)
+        UIView.animate(withDuration: 0.5, delay: delay, options: [.repeat, .autoreverse]) {
+            cView.alpha = 0
+        }
+    }
+    
+    let point1 = UIView(frame: CGRect(x: 100, y: 350, width: 4, height: 4))
+    let point2 = UIView(frame: CGRect(x: 105, y: 350, width: 4, height: 4))
+    let point3 = UIView(frame: CGRect(x: 110, y: 350, width: 4, height: 4))
+    
+    private func downloadIndicatorAnimate () {
+        pointPrepare(cView: point1, delay: 0)
+        pointPrepare(cView: point2, delay: 0.2)
+        pointPrepare(cView: point3, delay: 0.4)
+        
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "logInScreen" {
             
                 if checkLogAndPass() {
+                    downloadIndicatorAnimate()
                     return true
                 } else {
                     let alert = UIAlertController (title: "Alert", message: "wrong password", preferredStyle: .alert)
