@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B4D8F6B2618C80500487063 /* DetailPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D8F6A2618C80500487063 /* DetailPhotoViewController.swift */; };
 		4B4E5DBD260B61BE00FB6D07 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E5DBC260B61BE00FB6D07 /* NewsViewController.swift */; };
 		4B4E5DC0260B620800FB6D07 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B4E5DBF260B620800FB6D07 /* NewsCell.xib */; };
 		4B4E5DC3260B654200FB6D07 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E5DC2260B654200FB6D07 /* NewsTableViewCell.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B4D8F6A2618C80500487063 /* DetailPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoViewController.swift; sourceTree = "<group>"; };
 		4B4E5DBC260B61BE00FB6D07 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		4B4E5DBF260B620800FB6D07 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		4B4E5DC2260B654200FB6D07 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				4BC536BA25F54D790053B05B /* UserTableViewCell.swift */,
 				4BC536C225F9377D0053B05B /* PhotoViewController.swift */,
 				4BC536C525F938A10053B05B /* PhotoCollectionViewCell.swift */,
+				4B4D8F6A2618C80500487063 /* DetailPhotoViewController.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				4BC536C625F938A10053B05B /* PhotoCollectionViewCell.swift in Sources */,
 				4BC536DD26008C9C0053B05B /* LikesButton.swift in Sources */,
 				4BC536D225F94C390053B05B /* GlobalGorupViewController.swift in Sources */,
+				4B4D8F6B2618C80500487063 /* DetailPhotoViewController.swift in Sources */,
 				4BC536A625EE9CD10053B05B /* FriendsViewController.swift in Sources */,
 				4BC5368F25EA35D70053B05B /* LogInScreen.swift in Sources */,
 				4BC5368B25EA35D70053B05B /* AppDelegate.swift in Sources */,
