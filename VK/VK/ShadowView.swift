@@ -28,4 +28,18 @@ import UIKit
             layer.shadowOffset = shadowOffset
         }
     }
+    override func touchesBegan (_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let animation = CASpringAnimation(keyPath: "transform.scale")
+            animation.fromValue = 1
+        animation.toValue = 0.7
+            animation.stiffness = 200
+            animation.mass = 2
+            animation.duration = 0.2
+            animation.beginTime = CACurrentMediaTime()
+            animation.fillMode = CAMediaTimingFillMode.backwards
+            
+        self.layer.add(animation, forKey: nil)
+
+    }
 }

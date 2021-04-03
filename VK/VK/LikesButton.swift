@@ -58,8 +58,13 @@ import UIKit
     }
     private func updateSelectionState() {
         let colour = isSelected ? tintColor : .black
-        likesLabel.textColor = colour
-        likeImageView.tintColor = colour
+        UIImageView.transition(with: stackView, duration: 0.5, options: .transitionFlipFromBottom) {
+            self.likesLabel.textColor = colour
+            self.likeImageView.tintColor = colour
+        } completion: { (success) in
+            
+        }
+
         updateLabelText ()
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

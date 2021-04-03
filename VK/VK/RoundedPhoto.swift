@@ -8,6 +8,8 @@
 import UIKit
 
 @IBDesignable class roundedImageView: UIImageView {
+
+    
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             layer.masksToBounds = true
@@ -15,4 +17,6 @@ import UIKit
         }
         
     }
+    
+    
 }
