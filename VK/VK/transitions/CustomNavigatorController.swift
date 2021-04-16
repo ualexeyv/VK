@@ -27,8 +27,9 @@ class CustomNavigatorController: UINavigationController, UINavigationControllerD
         }
         return nil
     }
-    
-    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    func navigationController(_ navigationController: UINavigationController,
+                              interactionControllerFor animationController: UIViewControllerAnimatedTransitioning)
+                              -> UIViewControllerInteractiveTransitioning? {
         return interactiveTransition.hasStarted ? interactiveTransition : nil
     }
 }
