@@ -17,13 +17,27 @@ class LogInScreen: UIViewController {
     let password = "12345"
 
     @IBAction func buttonTapped(_ sender: Any) {
-        if loginField.text == "admin", passwordField.text == "12345" {
-            print ("верно")
-        } else {
-            print ("ошибка")
+        downloadIndicatorAnimate()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            [weak self] in self?.authAction()
         }
-    
     }
+            private func authAction() {
+                if checkLogAndPass() {
+                    self.performSegue(withIdentifier: "logInScreen", sender: self)
+                } else {
+                    let alert = UIAlertController (title: "Alert", message: "wrong password", preferredStyle: .alert)
+                    let action = UIAlertAction (title: "OK", style: .default) { (action) in
+                        self.loginField.text = ""
+                        self.passwordField.text = ""
+                    }
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+            }
+        
+    
     @objc func keyboardWasShown (notification: Notification) {
         let info = notification.userInfo! as NSDictionary
         let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
@@ -36,7 +50,6 @@ class LogInScreen: UIViewController {
         scrollView?.contentInset = contentInsets
     }
     override func viewWillAppear(_ animated: Bool) {
-        downloadIndicatorAnimate()
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -65,7 +78,7 @@ class LogInScreen: UIViewController {
     }
     private func pointPrepare (cView: UIView, delay: Double) {
         cView.backgroundColor = .black
-        cView.layer.cornerRadius = 2
+        cView.layer.cornerRadius = 5
         cView.layer.masksToBounds = true
         cView.alpha = 1
         view.addSubview(cView)
@@ -74,9 +87,9 @@ class LogInScreen: UIViewController {
         }
     }
     
-    let point1 = UIView(frame: CGRect(x: 100, y: 350, width: 4, height: 4))
-    let point2 = UIView(frame: CGRect(x: 105, y: 350, width: 4, height: 4))
-    let point3 = UIView(frame: CGRect(x: 110, y: 350, width: 4, height: 4))
+    let point1 = UIView(frame: CGRect(x: 140, y: 350, width: 10, height: 10))
+    let point2 = UIView(frame: CGRect(x: 155, y: 350, width: 10, height: 10))
+    let point3 = UIView(frame: CGRect(x: 170, y: 350, width: 10, height: 10))
     
     private func downloadIndicatorAnimate () {
         pointPrepare(cView: point1, delay: 0)
@@ -85,26 +98,6 @@ class LogInScreen: UIViewController {
         
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "logInScreen" {
-            
-                if checkLogAndPass() {
-                    downloadIndicatorAnimate()
-                    return true
-                } else {
-                    let alert = UIAlertController (title: "Alert", message: "wrong password", preferredStyle: .alert)
-                    let action = UIAlertAction (title: "OK", style: .default) { (action) in
-                        self.loginField.text = ""
-                        self.passwordField.text = ""
-                    }
-                    alert.addAction(action)
-                    self.present(alert, animated: true, completion: nil)
-                    
-                }
-            
-        }
-        return true
-    }
 
 }
 

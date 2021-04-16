@@ -16,6 +16,7 @@ class PhotoViewController: UIViewController {
         }
     }
     var photoArray = [UIImage]()
+    var selectedItem: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,5 +46,15 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
             return CGSize(width: itemSize, height: itemSize)
         }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedItem = indexPath.item
+        self.performSegue(withIdentifier: "detailPhoto", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailPhoto",
+           let dest = segue.destination as? DetailPhotoViewController {
+            dest.selectedItem = selectedItem
+            dest.photos = photoArray
+        }
+    }
 }
