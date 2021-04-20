@@ -8,11 +8,14 @@
 import UIKit
 
 class GlobalGroupViewController: UIViewController {
+    let VKServ = VKService()
     var selectedGroup: VKGroup?
     var selectedGroupName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            [weak self] in self?.VKServ.loadData(getData: "groups.search")
+        }
         // Do any additional setup after loading the view.
     }
     @IBOutlet weak var globalGroupTableView: UITableView! {
