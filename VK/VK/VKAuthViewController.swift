@@ -63,7 +63,7 @@ extension VKAuthViewController: WKNavigationDelegate {
             }
             
         tokenVK = params["access_token"]
-            
+        Session.shared.token = tokenVK ?? ""
             print(tokenVK)
             
             

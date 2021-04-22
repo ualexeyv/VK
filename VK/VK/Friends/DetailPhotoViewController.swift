@@ -8,12 +8,13 @@
 import UIKit
 
 class DetailPhotoViewController: UIViewController {
-
+    private let VKServ = VKService()
     var selectedItem: Int = 0
     var photos: [UIImage] = []
     @IBOutlet weak var detailPhoto: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         detailPhoto.image = photos[selectedItem]
         detailPhoto.backgroundColor = view.backgroundColor
         let swipeLeft = UISwipeGestureRecognizer (target: self, action: #selector(swipeLeftAction))

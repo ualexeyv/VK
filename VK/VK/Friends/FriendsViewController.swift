@@ -44,7 +44,7 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         //пытаюсь получить ответ от сервера ВК
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             [weak self] in self?.VKServ.loadData(getData: "friends.get")
         }
         

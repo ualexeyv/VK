@@ -14,7 +14,7 @@ class GlobalGroupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            [weak self] in self?.VKServ.loadData(getData: "groups.search")
+            [weak self] in self?.VKServ.searchGroups(searchField: "swift")
         }
         // Do any additional setup after loading the view.
     }

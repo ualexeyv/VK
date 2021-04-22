@@ -8,7 +8,7 @@
 import UIKit
 
 class PhotoViewController: UIViewController {
-    
+    private let VKServ = VKService()
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -19,7 +19,13 @@ class PhotoViewController: UIViewController {
     var selectedItem: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            [weak self] in self?.VKServ.loadUserData(data: "users.get", userId: "219043724")
+           
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            [weak self] in self?.VKServ.loadPhotoData(userId: "219043724")
+        }
     }
     
 }
