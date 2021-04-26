@@ -20,6 +20,7 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     var isFilltering: Bool { return searchController.isActive && !isSearchBarEmpty}
     
     
+    
     func checkSearchFilter() {
         keys = []
         arrayOfUsers = []
@@ -41,12 +42,19 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     }
     
+    //MARK : - Массив друзей, которые пытаемся получить от сервера
+    var friend: [Friend] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //пытаюсь получить ответ от сервера ВК
+        //пытаюсь получить ответ от сервера ВК со данными друга
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            [weak self] in self?.VKServ.loadData(getData: "friends.get")
+            [weak self] in self?.VKServ.loadFriendData(extraPath: "friends.get") { [weak self] friend in
+                self?.friend = friend
+            }
         }
+        //пытаюсь получить пользователя по конкретному id
+        
         
         checkSearchFilter()
         searchController.searchResultsUpdater = self

@@ -10,17 +10,18 @@ import Alamofire
 
 class VKService {
     // базовый URL сервиса
-        let baseUrl = "https://api.vk.com"
-        // ключ для доступа к сервису
-        let apiKey = Session.shared.token
-   
-        // метод для загрузки данных, в качестве аргументов получает вид запроса
-        func loadData(getData: String){
-            
+    let baseUrl = "https://api.vk.com"
+    // ключ для доступа к сервису
+    let apiKey = Session.shared.token
+
+    // метод для загрузки информации о друзьях
+    func loadFriendData(extraPath: String, completion: @escaping ([Friend]) -> Void ){
+        
         // путь для получения списков друзей или груп
-            let path = "/method/" + getData
+            let path = "/method/" + extraPath
         // параметры, токен, версия
             let methodName: Parameters = [
+                "fields": "photo_50",
                 "access_token": apiKey,
                 "v": "5.130"
             ]
@@ -30,14 +31,20 @@ class VKService {
             
         // делаем запрос
             AF.request(url, method: .get, parameters: methodName).responseJSON { response in
-                print(response.value ?? "")
+                guard let data = response.value else { return }
+                let friend = try! JSONDecoder().decode(Friends.self, from: data as! Data).items
+                        
+                completion(friend)
+                
+    //            print(friend)
             }
             
-        }
-    func loadUserData(data: String, userId: String){
+    }
+    // метод для загрузки данных позьзователя по его id
+    func loadUserData(extraPath: String, userId: String){
             
         // путь для получения к пользователяи
-            let path = "/method/" + data
+            let path = "/method/" + extraPath
         // параметры, айди соответсвующего пользователя, др, токен и версия
             let methodName: Parameters = [
                 "user_ids": userId,
@@ -72,6 +79,7 @@ class VKService {
             
         // делаем запрос
             AF.request(url, method: .get, parameters: methodName).responseJSON { response in
+                
                 print(response.value ?? "")
             }
         
