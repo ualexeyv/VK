@@ -6,6 +6,9 @@
 //
 
 import UIKit
+class FriendResponse: Decodable {
+    var response: Friends
+}
 class Friends: Decodable {
     var items: [Friend]
 }

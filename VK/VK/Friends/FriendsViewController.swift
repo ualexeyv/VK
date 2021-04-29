@@ -11,15 +11,15 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     let VKServ = VKService()
     
     var keys: [String] = []
-    var friendSorted: [String:[VKUser]] = [:]
-    var friendsFiltered: [VKUser] = []
+    var friendSorted: [String:[Friend]] = [:]
+    var friendsFiltered: [Friend] = []
     
     let searchController = UISearchController (searchResultsController: nil)
-    var arrayOfUsers: [VKUser] = []
+    var arrayOfUsers: [Friend] = []
     var isSearchBarEmpty: Bool {return searchController.searchBar.text?.isEmpty ?? true}
     var isFilltering: Bool { return searchController.isActive && !isSearchBarEmpty}
     
-    
+    var friendGet: [Friend] = []
     
     func checkSearchFilter() {
         keys = []
@@ -28,10 +28,11 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
         if isFilltering {
             arrayOfUsers = friendsFiltered
         } else {
-            arrayOfUsers = users
+            arrayOfUsers = friendGet
+        //    print (arrayOfUsers.map { $0.firstName + " " + $0.lastName})
         }
         for user in arrayOfUsers {
-            let firstLetter = String(user.fio.first!)
+            let firstLetter = String(user.firstName.first!)
             if friendSorted[firstLetter] != nil {
                 friendSorted[firstLetter]?.append(user)
             } else {
@@ -39,24 +40,22 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         keys = Array (friendSorted.keys).sorted(by: <)
-    
     }
     
-    //MARK : - Массив друзей, которые пытаемся получить от сервера
-    var friend: [Friend] = []
+    //MARK - : Массив друзей, которые пытаемся получить от сервера
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //пытаюсь получить ответ от сервера ВК со данными друга
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            [weak self] in self?.VKServ.loadFriendData(extraPath: "friends.get") { [weak self] friend in
-                self?.friend = friend
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self?.VKServ.loadFriendData(extraPath: "friends.get") { [weak self] ArrayOffriends in
+                self?.friendGet = ArrayOffriends
+                self?.checkSearchFilter()
             }
         }
-        //пытаюсь получить пользователя по конкретному id
         
         
-        checkSearchFilter()
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "search"
@@ -85,7 +84,8 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        checkSearchFilter()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in self?.checkSearchFilter()
+        }
         view.tintColor = UIColor.gray
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.text = keys[section]
@@ -106,10 +106,10 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
         let key = keys[indexPath.section]
         let user = friendSorted[key]![indexPath.row]
-        let fio = user.fio
-        let avatar = user.friendAvatar
+        let fio = user.firstName + " " + user.lastName
+        let avatar = user.avatar
         cell.nameLabl.text = fio
-        cell.avatarImage.image = avatar
+        cell.avatarImage.image = UIImage (named: avatar)
         
         return cell
     }
@@ -121,12 +121,12 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let key = keys[indexPath.section]
         let user = friendSorted[key]![indexPath.row]
         
-        VC.photoArray = user.userPhoto
+ //       VC.photoArray = user
         show(VC, sender: nil)
     }
     func filteredContentForSearchText (_ searchText: String) {
-        friendsFiltered = users.filter { (friend: VKUser) -> Bool in
-            return friend.fio.lowercased().contains(searchText.lowercased())
+        friendsFiltered = friendGet.filter { (friend: Friend) -> Bool in
+            return friend.lastName.lowercased().contains(searchText.lowercased())
         }
        
         friendsTableView.reloadData()

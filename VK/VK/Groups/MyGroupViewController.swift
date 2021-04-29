@@ -8,13 +8,13 @@
 import UIKit
 
 class MyGroupViewController: UIViewController {
-    let VKServ = VKService()
+//    let VKServ = VKService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            [weak self] in self?.VKServ.loadData(getData: "groups.get")
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            [weak self] in self?.VKServ.loadData(getData: "groups.get")
+//        }
         // Do any additional setup after loading the view.
     }
     @IBOutlet weak var myGroupTableView: UITableView! {

@@ -13,9 +13,9 @@ class GlobalGroupViewController: UIViewController {
     var selectedGroupName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            [weak self] in self?.VKServ.searchGroups(searchField: "swift")
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            [weak self] in self?.VKServ.searchGroups(searchField: "swift")
+//        }
         // Do any additional setup after loading the view.
     }
     @IBOutlet weak var globalGroupTableView: UITableView! {

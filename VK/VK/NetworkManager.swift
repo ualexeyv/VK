@@ -30,79 +30,80 @@ class VKService {
             let url = baseUrl+path
             
         // делаем запрос
-            AF.request(url, method: .get, parameters: methodName).responseJSON { response in
+            AF.request(url, method: .get, parameters: methodName).responseData { response in
                 guard let data = response.value else { return }
-                let friend = try! JSONDecoder().decode(Friends.self, from: data as! Data).items
+                
+                let arrayFriends = try! JSONDecoder().decode(FriendResponse.self, from: data)
                         
-                completion(friend)
+                completion(arrayFriends.response.items)
                 
     //            print(friend)
             }
             
     }
     // метод для загрузки данных позьзователя по его id
-    func loadUserData(extraPath: String, userId: String){
-            
-        // путь для получения к пользователяи
-            let path = "/method/" + extraPath
-        // параметры, айди соответсвующего пользователя, др, токен и версия
-            let methodName: Parameters = [
-                "user_ids": userId,
-                "fields": "bdate",
-                "access_token": apiKey,
-                "v": "5.130"
-            ]
-            
-        // составляем URL из базового адреса сервиса и конкретного пути к ресурсу
-            let url = baseUrl+path
-            
-        // делаем запрос
-            AF.request(url, method: .get, parameters: methodName).responseJSON { response in
-                print(response.value ?? "")
-            }
-        
-    }
-    func loadPhotoData(userId: String){
-            
-        // путь для получения к пользователяи
-            let path = "/method/photos.get"
-        // параметры, айди соответсвующего пользователя, др, токен и версия
-            let methodName: Parameters = [
-                "owner_id": userId,
-                "album_id": "wall",
-                "access_token": apiKey,
-                "v": "5.130"
-            ]
-            
-        // составляем URL из базового адреса сервиса и конкретного пути к ресурсу
-            let url = baseUrl+path
-            
-        // делаем запрос
-            AF.request(url, method: .get, parameters: methodName).responseJSON { response in
-                
-                print(response.value ?? "")
-            }
-        
-    }
-    func searchGroups(searchField: String){
-            
-        // путь для получения к пользователяи
-            let path = "/method/groups.search"
-        // параметры, айди соответсвующего пользователя, др, токен и версия
-            let methodName: Parameters = [
-                "q": searchField,
-                "count": "3",
-                "access_token": apiKey,
-                "v": "5.130"
-            ]
-            
-        // составляем URL из базового адреса сервиса и конкретного пути к ресурсу
-            let url = baseUrl+path
-            
-        // делаем запрос
-            AF.request(url, method: .get, parameters: methodName).responseJSON { response in
-                print(response.value ?? "")
-            }
-        
-    }
+//    func loadUserData(extraPath: String, userId: String){
+//
+//        // путь для получения к пользователяи
+//            let path = "/method/" + extraPath
+//        // параметры, айди соответсвующего пользователя, др, токен и версия
+//            let methodName: Parameters = [
+//                "user_ids": userId,
+//                "fields": "bdate",
+//                "access_token": apiKey,
+//                "v": "5.130"
+//            ]
+//
+//        // составляем URL из базового адреса сервиса и конкретного пути к ресурсу
+//            let url = baseUrl+path
+//
+//        // делаем запрос
+//            AF.request(url, method: .get, parameters: methodName).responseJSON { response in
+//                print(response.value ?? "")
+//            }
+//
+//    }
+//    func loadPhotoData(userId: String){
+//
+//        // путь для получения к пользователяи
+//            let path = "/method/photos.get"
+//        // параметры, айди соответсвующего пользователя, др, токен и версия
+//            let methodName: Parameters = [
+//                "owner_id": userId,
+//                "album_id": "wall",
+//                "access_token": apiKey,
+//                "v": "5.130"
+//            ]
+//
+//        // составляем URL из базового адреса сервиса и конкретного пути к ресурсу
+//            let url = baseUrl+path
+//
+//        // делаем запрос
+//            AF.request(url, method: .get, parameters: methodName).responseJSON { response in
+//
+//                print(response.value ?? "")
+//            }
+//
+//    }
+//    func searchGroups(searchField: String){
+//
+//        // путь для получения к пользователяи
+//            let path = "/method/groups.search"
+//        // параметры, айди соответсвующего пользователя, др, токен и версия
+//            let methodName: Parameters = [
+//                "q": searchField,
+//                "count": "3",
+//                "access_token": apiKey,
+//                "v": "5.130"
+//            ]
+//
+//        // составляем URL из базового адреса сервиса и конкретного пути к ресурсу
+//            let url = baseUrl+path
+//
+//        // делаем запрос
+//            AF.request(url, method: .get, parameters: methodName).responseJSON { response in
+//                print(response.value ?? "")
+//            }
+//
+//    }
 }
