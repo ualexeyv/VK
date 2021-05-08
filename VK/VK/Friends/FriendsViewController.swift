@@ -8,7 +8,6 @@
 import UIKit
 
 class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    let VKServ = VKService()
     
     var keys: [String] = []
     var friendSorted: [String:[VKUser]] = [:]
@@ -43,11 +42,6 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //пытаюсь получить ответ от сервера ВК
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            [weak self] in self?.VKServ.loadData(getData: "friends.get")
-        }
-        
         checkSearchFilter()
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
