@@ -12,9 +12,12 @@
 		4B4D8F722625C79300487063 /* CustomPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D8F712625C79300487063 /* CustomPopAnimator.swift */; };
 		4B4D8F752625CAD400487063 /* CustomNavigatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D8F742625CAD400487063 /* CustomNavigatorController.swift */; };
 		4B4D8F782625D0A500487063 /* CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D8F772625D0A500487063 /* CustomInteractiveTransition.swift */; };
+<<<<<<< 877be0520ddeeb911c3be9de0f9e1b160c28d394
 		4B4D8F7B2629CA2400487063 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D8F7A2629CA2300487063 /* Session.swift */; };
 		4B4D8F82262F061000487063 /* VKAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D8F81262F061000487063 /* VKAuthViewController.swift */; };
 		4B4D8F86262F110E00487063 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D8F85262F110E00487063 /* NetworkManager.swift */; };
+=======
+>>>>>>> P2L4
 		4B4E5DBD260B61BE00FB6D07 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E5DBC260B61BE00FB6D07 /* NewsViewController.swift */; };
 		4B4E5DC0260B620800FB6D07 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B4E5DBF260B620800FB6D07 /* NewsCell.xib */; };
 		4B4E5DC3260B654200FB6D07 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E5DC2260B654200FB6D07 /* NewsTableViewCell.swift */; };
@@ -44,9 +47,12 @@
 		4B4D8F712625C79300487063 /* CustomPopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopAnimator.swift; sourceTree = "<group>"; };
 		4B4D8F742625CAD400487063 /* CustomNavigatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigatorController.swift; sourceTree = "<group>"; };
 		4B4D8F772625D0A500487063 /* CustomInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInteractiveTransition.swift; sourceTree = "<group>"; };
+<<<<<<< 877be0520ddeeb911c3be9de0f9e1b160c28d394
 		4B4D8F7A2629CA2300487063 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		4B4D8F81262F061000487063 /* VKAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAuthViewController.swift; sourceTree = "<group>"; };
 		4B4D8F85262F110E00487063 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> P2L4
 		4B4E5DBC260B61BE00FB6D07 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		4B4E5DBF260B620800FB6D07 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		4B4E5DC2260B654200FB6D07 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -159,9 +165,12 @@
 				4BC536D626007D3E0053B05B /* RoundedPhoto.swift */,
 				4BC536D9260080CC0053B05B /* ShadowView.swift */,
 				4BC536DC26008C9C0053B05B /* LikesButton.swift */,
+<<<<<<< 877be0520ddeeb911c3be9de0f9e1b160c28d394
 				4B4D8F7A2629CA2300487063 /* Session.swift */,
 				4B4D8F81262F061000487063 /* VKAuthViewController.swift */,
 				4B4D8F85262F110E00487063 /* NetworkManager.swift */,
+=======
+>>>>>>> P2L4
 			);
 			path = VK;
 			sourceTree = "<group>";
@@ -335,7 +344,6 @@
 				4BC536BB25F54D790053B05B /* UserTableViewCell.swift in Sources */,
 				4BC536C325F9377D0053B05B /* PhotoViewController.swift in Sources */,
 				4BC5368D25EA35D70053B05B /* SceneDelegate.swift in Sources */,
-				4B4D8F7B2629CA2400487063 /* Session.swift in Sources */,
 				4B4D8F752625CAD400487063 /* CustomNavigatorController.swift in Sources */,
 				4B4E5DBD260B61BE00FB6D07 /* NewsViewController.swift in Sources */,
 				4BC536CA25F944C90053B05B /* MyGroupViewController.swift in Sources */,
